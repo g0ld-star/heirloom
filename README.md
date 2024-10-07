@@ -1,6 +1,8 @@
 # Heirloom game team
 * Welcome to our page for our game we are working on.
 * We believe our game should be named "Heirloom", but that is something we could change later on.
+* This game could possible be a platforming game with story themes changing the gameplay.
+* The game could also have RPG-like combat that changes based on who your character is, and could also be different for everyone, as to not make gameplay stale.
 # TEAM MEMBERS:
 * Gold B; Story, artist
 * Angus K; Story, coding, testing
