@@ -1,5 +1,5 @@
 * Welcome to our page for our game we are working on.
-We believe our game should be named "Heirloom", but that is something we could change later on.
+# We believe our game should be named "Heirloom", but that is something we could change later on.
 TEAM MEMBERS:
 Gold B; Story, artist
 Angus K; Story, coding, testing
