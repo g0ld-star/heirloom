@@ -17,4 +17,8 @@ This could possibly be the start screen of our game, or the background of it at 
 or this:
 ![pixilart-drawing](https://github.com/user-attachments/assets/e89d7773-2dbf-4e79-86f0-5ca23144abed)
 
+not sure what we could do with this
+![pixilart-drawing 2](https://github.com/user-attachments/assets/76611e3d-f34f-469f-aabd-a00076b9484f)
 
+also made this
+![1728482847 330056](https://github.com/user-attachments/assets/97c8e942-357d-4c06-8395-d6716937ad97)
