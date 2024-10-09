@@ -1,6 +1,6 @@
 class Evilpt1 {}
 
-/Member Variable
+// Member Variable
 int x,y,w,h, speed, health, lives;
 PImage f1;
 boolean alive;
