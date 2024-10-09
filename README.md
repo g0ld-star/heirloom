@@ -22,3 +22,7 @@ not sure what we could do with this
 
 also made this
 ![1728482847 330056](https://github.com/user-attachments/assets/97c8e942-357d-4c06-8395-d6716937ad97)
+
+
+uml
+![heirloom](https://github.com/user-attachments/assets/757880e7-f094-422c-8a04-0de30077da35)
