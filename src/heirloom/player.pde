@@ -1,11 +1,11 @@
-class log {
+class player {
 // Member Variables
 int x, y, w, h, speed, lives;
-PImage l1;
+PImage p1;
 boolean alive;
 
 // Constructor
-log() {
+player() {
   x = 0;
   y = 0;
   w = 50;
@@ -13,7 +13,7 @@ log() {
   speed = 5;
   health = 100;
   lives = 3;
-  l1 = loadImage("");
+  p1 = loadImage("");
   alive = false;
 }
 
