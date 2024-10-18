@@ -9,11 +9,11 @@ Evilpt3() {
 x = 0;
 y = 0;
 w = 50;
-h = 50
+h = 50;
 speed = 5;
 health = 100;
-f3 = loadImage ("")
-alive = false
+f3 = loadImage ("");
+alive = false;
 }
 }
 
