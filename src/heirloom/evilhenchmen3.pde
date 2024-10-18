@@ -12,7 +12,7 @@ w = 50;
 h = 50
 speed = 5;
 health = 100;
-f3 = loadimage ("")
+f3 = loadImage ("")
 alive = false
 }
 }
