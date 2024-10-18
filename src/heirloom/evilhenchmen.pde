@@ -4,7 +4,7 @@ class Evilpt1 {
 int x,y,w,h, speed, health, lives;
 PImage f1;
 boolean alive;
-constructore
+// constructor
 Evilpt1() {
 x = 0;
 y = 0;
