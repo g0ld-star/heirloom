@@ -1,14 +1,15 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 
 
+void setup() {
 
-void setup() {}
-eTimer = newTimer(1000);
-eTimer.start();
+  eTimer = newTimer(1000);
+  eTimer.start();
+}
+void draw() {
 
-void draw(){}
-if(eTimer.isFinished()) {
-
-} else() {
-
+  if (eTimer.isFinished()) {
+  }
+   else() {
+  }
 }
