@@ -5,7 +5,7 @@ player ply1;
 boolean play;
 
 void setup() {
-  size(800, 700);
+  size(800, 600);
   map = loadImage("map.png");
   e1 = new Evilpt1();
   ply1 = new player();
