@@ -5,7 +5,7 @@ player ply1;
 boolean play;
 
 void setup() {
-  size(800, 600);
+  size(800, 700);
   map = loadImage("map.png");
   e1 = new Evilpt1();
   ply1 = new player();
@@ -30,7 +30,8 @@ void draw() {
 void startScreen() {
   background(0);
   fill(255);
-  text("Press any key to start", width/2.3, height/2);
+  textSize(60);
+  text("Press 'SpaceKey' to start", width/8.5, height/2);
   if (keyPressed) {
     play = true;
   }
