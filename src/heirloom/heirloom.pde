@@ -1,11 +1,14 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map;
 Evilpt1 e1;
+player ply1;
 boolean play;
+
 void setup() {
   size(800, 600);
   map = loadImage("map.png");
   e1 = new Evilpt1();
+  ply1 = new player();
   play = false;
   // eTimer = newTimer(1000);
   // eTimer.start();
@@ -14,9 +17,13 @@ void draw() {
   if (play == false) {
     startScreen();
   } else {
+    background(0);
     // THIS IS WHERE GAMPLAY IS
-    image(map,0,0);
+    image(map, 0, 0);
     e1.display();
+    e1.move();
+    ply1.move();
+    ply1.display();   
   }
 }
 
@@ -28,15 +35,3 @@ void startScreen() {
     play = true;
   }
 }
-//void keyPressed() {
-//  // Move the character with arrow keys
-//  if (keyCode == RIGHT) {
-//    charX += 5; //  right
-//  } else if (keyCode == LEFT) {
-//    charX -= 5; //  left
-//  } else if (keyCode == UP) {
-//    charY -= 5; //  up
-//  } else if (keyCode == DOWN) {
-//    charY += 5; //  down
-//  }
-//}
