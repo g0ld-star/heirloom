@@ -2,37 +2,62 @@
 PImage map;
 Evilpt1 e1;
 player ply1;
+
 boolean play;
+
+int mapWidth = 800;
+int mapHeight = 600;
+float mapOffsetX = 0;   // Horizontal offset for the map
+int speed = 5;
 
 void setup() {
   size(800, 600);
+  noStroke();
   map = loadImage("map.png");
   e1 = new Evilpt1();
   ply1 = new player();
   play = false;
-  // eTimer = newTimer(1000);
-  // eTimer.start();
 }
+
 void draw() {
-  if (play == false) {
+  if (!play) {
     startScreen();
   } else {
     background(0);
-    // THIS IS WHERE GAMPLAY IS
-    image(map, 0, 0);
-    e1.display();
-    e1.move();
-    ply1.move();
-    ply1.display();   
-  }
-}
 
-void startScreen() {
-  background(0);
-  fill(255);
-  textSize(60);
-  text("Press 'SpaceKey' to start", width/8.5, height/2);
-  if (keyPressed) {
-    play = true;
+    // Endless scrolling
+    for (int i = -1; i <= 1; i++) {
+      image(map, mapOffsetX + i * mapWidth, 0); // Only use horizontal offset
+    }
+
+
+    if (keyPressed) {
+      if (keyCode == RIGHT || key == 'd') {
+        mapOffsetX -= speed;  // Move left
+      } 
+    }
+
+      // Loop effect
+      if (mapOffsetX <= -mapWidth) {
+        mapOffsetX += mapWidth;  // Wrap around to the right
+      } else if (mapOffsetX >= 0) {
+        mapOffsetX -= mapWidth;  // Wrap around to the left
+      }
+
+      // Display the player at the center
+      ply1.display(width / 4, height / 3.6);
+      e1.display();
+      e1.move();
+    }
   }
-}
+
+
+  void startScreen() {
+    background(0);
+    fill(255);
+    textSize(60);
+    text("Press 'SpaceKey' to start", width / 8.5, height / 2);
+    if (keyPressed) {
+      play = true;
+    }
+  }

@@ -18,26 +18,13 @@ class player {
   }
 
   // Member methods
-  void display () {
+  void display (float centerX, float centerY) {
     fill(255, 0, 0); //Red color
-    rect(x,y, w,h); //Block
+    rect(centerX - w/4, centerY - h/3.6, w,h); //Block
   }
 
   void move() {
-   if (keyPressed) {
-      if (key == 'a' || keyCode == LEFT) {
-        x -= 4; // Move left
-      }
-      if (key == 'd' || keyCode == RIGHT) {
-        x += 4; // Move right
-      }
-      if (key == 'w' || keyCode == UP) {
-        y -= 3; // Move up
-      }
-      if (key == 's' || keyCode == DOWN) {
-        y += 5; // Move down
-      }
-    }
+ 
     y = constrain(y,0,195-h); //Keeps player from moving beyond this height
   }
 }

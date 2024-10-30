@@ -1,7 +1,8 @@
 class Evilpt1 {
 
   // Member Variable
-  int x, y, w, h, speed, health, lives;
+  int x, y, w, h, health, lives;
+  int speed;
   PImage f1;
   boolean alive;
   // constructor
@@ -10,7 +11,7 @@ class Evilpt1 {
     y = 158;
     w = 35;
     h = 40;
-    speed = 5;
+    speed = 8;
     health = 100;
     f1 = loadImage ("Enemy.png");
    // alive = false;
