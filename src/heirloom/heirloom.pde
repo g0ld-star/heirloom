@@ -13,7 +13,10 @@ int speed = 5;
 void setup() {
   size(800, 600);
   noStroke();
-  map = loadImage("cyberpunk background.png");
+   map = loadImage("cyberpunk background.png");
+   image(map, 0, 0);
+  map.resize(900, 600);
+  image(map, 0, 0);
   e1 = new Evilpt1();
   ply1 = new player();
   play = false;
@@ -45,7 +48,7 @@ void draw() {
       }
 
       // Display the player at the center
-      ply1.display(width / 4, height / 3.6);
+      ply1.display(width / 9, height / 1.1);
       e1.display();
       e1.move();
     }
