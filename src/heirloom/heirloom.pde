@@ -13,7 +13,7 @@ int speed = 5;
 void setup() {
   size(800, 600);
   noStroke();
-  map = loadImage("map.png");
+  map = loadImage("cyberpunk background.png");
   e1 = new Evilpt1();
   ply1 = new player();
   play = false;
