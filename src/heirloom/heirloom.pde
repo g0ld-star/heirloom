@@ -2,6 +2,7 @@
 PImage map;
 Evilpt1 e1;
 player ply1;
+infoPanel panel;
 
 boolean play;
 
@@ -13,6 +14,7 @@ int speed = 5;
 void setup() {
   size(800, 600);
   noStroke();
+  panel = new infoPanel(0,100,3);
    map = loadImage("cyberpunk background.png");
    image(map, 0, 0);
   map.resize(900, 600);
@@ -28,6 +30,8 @@ void draw() {
   } else {
     background(0);
 
+//Update timer
+ panel.updateTimer(1.0 / frameRate);
     // Endless scrolling
     for (int i = -1; i <= 1; i++) {
       image(map, mapOffsetX + i * mapWidth, 0); // Only use horizontal offset
@@ -47,10 +51,11 @@ void draw() {
         mapOffsetX -= mapWidth;  // Wrap around to the left
       }
 
-      // Display the player at the center
+      // Display objects
       ply1.display(width / 9, height / 1.1);
       e1.display();
       e1.move();
+      panel.display();
     }
   }
 
