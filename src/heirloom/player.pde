@@ -1,3 +1,4 @@
+//Aayush Silwal
 class player {
   // Member Variables
   int x, y, w, h, speed, lives, health;
@@ -23,8 +24,5 @@ class player {
     rect(centerX - w/4, centerY - h/3.6, w,h); //Block
   }
 
-  void move() {
- 
-    y = constrain(y,0,195-h); //Keeps player from moving beyond this height
-  }
+  void move() {}
 }

@@ -1,5 +1,6 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map;
+ArrayList <blocker> obstacles = new ArrayList <blocker>();
 Evilpt1 e1;
 player ply1;
 infoPanel panel;
