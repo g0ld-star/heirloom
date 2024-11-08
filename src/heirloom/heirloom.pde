@@ -1,6 +1,4 @@
-// Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
-PImage map;
-//ArrayList <evil> evils = new ArrayList <evil>(); //Array list for Evil henchmen
+PImage map01, map02;
 Evilpt1 e1;
 player ply1;
 infoPanel panel;
@@ -10,16 +8,17 @@ boolean play;
 int mapWidth = 800;
 int mapHeight = 600;
 float mapOffsetX = 0;   // Horizontal offset for the map
-int speed = 3;
+int speed = 5;
 
 void setup() {
   size(800, 600);
   noStroke();
-  panel = new infoPanel(0, 100, 3);
-  map = loadImage("cyberpunk background.png");
-  image(map, 0, 0);
-  map.resize(900, 600);
-  image(map, 0, 0);
+  //panel = new infoPanel(0, 100, 3);
+  map01 = loadImage("cyberpunk background.png");
+  map02 = loadImage("flowergardenbg.png");
+  image(map02, 0, 0);
+  map02.resize(900, 600);
+  image(map02, 0, 0);
   e1 = new Evilpt1();
   ply1 = new player();
   play = false;
@@ -31,46 +30,32 @@ void draw() {
   } else {
     background(0);
 
-    // Update timer
-    panel.updateTimer(1.0 / frameRate);
-
-    // Endless scrolling background
+    //Update timer
+    //panel.updateTimer(1.0 / frameRate);
+    // Endless scrolling
     for (int i = -1; i <= 1; i++) {
-      image(map, mapOffsetX + i * mapWidth, 0);
+      image(map02, mapOffsetX + i * mapWidth, 0); // Only use horizontal offset
     }
 
-    // Player movement
+
     if (keyPressed) {
       if (keyCode == RIGHT || key == 'd') {
         mapOffsetX -= speed;  // Move left
       }
-
-    
-        if (key == ' ' && !ply1.isJumping) {
-        ply1.jump(); // Jump 
-      }
     }
 
-    // Background loop effect
+    // Loop effect
     if (mapOffsetX <= -mapWidth) {
-      mapOffsetX += mapWidth;
+      mapOffsetX += mapWidth;  // Wrap around to the right
     } else if (mapOffsetX >= 0) {
-      mapOffsetX -= mapWidth;
+      mapOffsetX -= mapWidth;  // Wrap around to the left
     }
 
-    // Update player movement and display
-    ply1.move();
-    ply1.display();
-
-    // Update and display enemy
+    // Display objects
+    ply1.display(width / 9, height / 1.1);
     e1.display();
     e1.move();
-
-    // Display panel
-    panel.display();
-    
-    //Update 
-   // updateEnemies();
+    //panel.display();
   }
 }
 
@@ -78,11 +63,9 @@ void draw() {
 void startScreen() {
   background(0);
   fill(255);
-  textSize(50);
-  text("Click 'mouse anywhere' to start", width/10 , height / 2);
-  if (mousePressed) {
+  textSize(60);
+  text("Press 'SpaceKey' to start", width / 8.5, height / 2);
+  if (keyPressed) {
     play = true;
   }
 }
-
-//void updateEnemies() {} 
