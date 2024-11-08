@@ -1,28 +1,41 @@
 //Aayush Silwal
 class player {
-  // Member Variables
   int x, y, w, h, speed, lives, health;
-  //PImage p1;
-  boolean alive;
+  float yVelocity = 0;  //  jump
+  float gravity = 0.5;   // Gravity
+  boolean isJumping = false;
 
-  // Constructor
   player() {
     x = 50;
-    y = 158;
+    y = 517; 
     w = 30;
     h = 35;
     speed = 5;
     health = 100;
     lives = 3;
-  //  p1 = loadImage("");
-    alive = false;
   }
 
-  // Member methods
-  void display (float centerX, float centerY) {
-    fill(255, 0, 0); //Red color
-    rect(centerX - w/4, centerY - h/3.6, w,h); //Block
+  void display() {
+    fill(255, 0, 0);  // Red color for player
+    rect(x, y, w, h);
   }
 
-  void move() {}
+  void jump() {
+    if (!isJumping) {
+      yVelocity = -11;  
+      isJumping = true;  
+    }
+  }
+
+  void move() {
+    y += yVelocity;  
+    yVelocity += gravity;  // Apply gravity
+
+  //stop from going below ground level
+    if (y >= 517) {
+      y = 517;  
+      yVelocity = 0;  
+      isJumping = false;  
+    }
+  }
 }

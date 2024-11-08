@@ -2,8 +2,8 @@ class Evilpt1 {
 
   // Member Variable
   int x, y, w, h, health, lives;
-  int speed;
   PImage f1;
+  float speed;
   boolean alive;
   // constructor
   Evilpt1() {
@@ -11,20 +11,24 @@ class Evilpt1 {
     y = 500;
     w = 35;
     h = 40;
-    speed = 5;
+    speed = 3.2;
     health = 100;
     f1 = loadImage ("Enemy.png");
-   // alive = false;
+    // alive = false;
   }
 
   //member Methods
   void display() {
-    image(f1,x,y,width/8,height/8);
+    image(f1, x, y, width/10, height/10);
   }
 
   void move () {
-    x -= speed; //Move to left edge
-    if (x<-w){    //if the enemy goes off screen, it will respawn at right side
+    if (mapOffsetX < 0) {
+      x -= speed * 2; //
+    } else {
+      x -= speed; //
+    }
+    if (x<-w) {    //if the enemy goes off screen, it will respawn at right side
       x=width;
       y=500;
     }
