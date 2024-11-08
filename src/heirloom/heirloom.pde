@@ -1,3 +1,4 @@
+// Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map01, map02;
 Evilpt1 e1;
 player ply1;
@@ -16,9 +17,9 @@ void setup() {
   //panel = new infoPanel(0, 100, 3);
   map01 = loadImage("cyberpunk background.png");
   map02 = loadImage("flowergardenbg.png");
-  image(map02, 0, 0);
-  map02.resize(900, 600);
-  image(map02, 0, 0);
+  image(map01, 0, 0);
+  map01.resize(900, 600);
+  image(map01, 0, 0);
   e1 = new Evilpt1();
   ply1 = new player();
   play = false;
