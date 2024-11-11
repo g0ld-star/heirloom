@@ -1,13 +1,14 @@
 //Aayush Silwal
 class player {
   int x, y, w, h, speed, lives, health;
-  float yVelocity = 0;  //  jump
+  float ySpeed = 0;  //  jump speed
   float gravity = 0.5;   // Gravity
+  float jumpStrength = -10; //Jump force
   boolean isJumping = false;
 
-  player() {
-    x = 50;
-    y = 517; 
+  player(int startX, int startY) {
+    x = startX;
+    y = startY;
     w = 30;
     h = 35;
     speed = 5;
@@ -22,20 +23,22 @@ class player {
 
   void jump() {
     if (!isJumping) {
-      yVelocity = -11;  
-      isJumping = true;  
+      ySpeed = jumpStrength;
+      isJumping = true;
     }
   }
 
   void move() {
-    y += yVelocity;  
-    yVelocity += gravity;  // Apply gravity
+    if (isJumping) {
+      y += ySpeed;
+      ySpeed += gravity;  // Apply gravity
 
-  //stop from going below ground level
-    if (y >= 517) {
-      y = 517;  
-      yVelocity = 0;  
-      isJumping = false;  
+      //stop from going below ground level
+      if (y >= 517) {
+        y = 517;
+        ySpeed = 0;
+        isJumping = false;
+      }
     }
   }
 }

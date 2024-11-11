@@ -21,7 +21,7 @@ void setup() {
   map01.resize(900, 600);
   image(map01, 0, 0);
   e1 = new Evilpt1();
-  ply1 = new player();
+  ply1 = new player(width/2, 517);
   play = false;
 }
 
@@ -51,12 +51,18 @@ void draw() {
     } else if (mapOffsetX >= 0) {
       mapOffsetX -= mapWidth;  // Wrap around to the left
     }
-
+  }
     // Display objects
-    ply1.display(width / 9, height / 1.1);
+    ply1.display();
+    ply1.move();
     e1.display();
     e1.move();
     //panel.display();
+  
+}
+void keyPressed() {
+  if (key == ' ') {
+    ply1.jump();
   }
 }
 
