@@ -1,7 +1,7 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map01, map02;
-ArrayList<Particle> particles = new ArrayList<Particle>();
-Evilpt e1;
+ArrayList<Evilpa> evilpas = new ArrayList<Evilpa>();
+//Evilpt e1;
 player ply1;
 InfoPanel panel;
 
@@ -11,6 +11,8 @@ int mapWidth = 800;
 int mapHeight = 600;
 float mapOffsetX = 0;   // Horizontal offset for the map
 int speed = 5;
+Timer t1;
+
 
 void setup() {
   size(800, 600);
@@ -21,10 +23,13 @@ void setup() {
   image(map01, 0, 0);
   map01.resize(900, 600);
   image(map01, 0, 0);
-  e1 = new Evilpt('p');
+  //e = new Evilpa('p');
   ply1 = new player(width/2, 517);
   play = false;
   panel=new InfoPanel(0, 100, 3);
+  //1000 = 1 second
+  t1=new Timer(500);
+  t1.start();
 }
 
 
@@ -34,6 +39,11 @@ void draw() {
     startScreen();
   } else {
     background(0);
+    if (t1.isFinished()) {
+      evilpas.add(new Evilpa('p'));
+      t1.start();
+    }
+
 
     //Update timer
     //panel.updateTimer(1.0 / frameRate);
@@ -59,8 +69,14 @@ void draw() {
   // Display objects
   ply1.display();
   ply1.move();
-  e1.display();
-  e1.move();
+
+  for (int i = 0; i < evilpas.size(); i++) {
+    Evilpa e = evilpas.get(i);
+    e.display();
+    e.move();
+  }
+  //e1.display();
+  //e1.move();
   panel.display();
 }
 void keyPressed() {

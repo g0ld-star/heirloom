@@ -1,12 +1,12 @@
 //Aaysuh Silwal
-class infoPanel {
+class InfoPanel {
   int score;
   int health;
   int lives;
   int level;
   float timer;
   
-  infoPanel(int initialScore, int initialHealth, int initialLives) {
+  InfoPanel(int initialScore, int initialHealth, int initialLives) {
     score = initialScore;
     health = initialHealth;
     lives = initialLives;
