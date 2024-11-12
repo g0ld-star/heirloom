@@ -1,4 +1,6 @@
-PImage flowergardenbg;
+PImage map02;
+import processing.sound.*;
+SoundFile file;
 int map02Width = 2400; // Width of the long background
 int map02Height = 600; // Height of the background (same as the window size)
 float charX = 50; // Character's initial X position
@@ -9,7 +11,10 @@ float cameraX = 0; // Camera's X position
 
 void setup() {
 size(800, 600); // Window size
-flowergardenbg = loadImage("flowergardenbg.png");
+map02 = loadImage("flowergardenbg.png");
+
+  file = new SoundFile(this, "musicbox.wav");
+  file.play();
 }
 
 void draw() {
@@ -18,7 +23,7 @@ background(200, 200, 255);
 
 // Scroll the long background based on camera position
 imageMode(CORNER);
-image(flowergardenbg, -cameraX, 0);
+image(map02, -cameraX, 0);
 
 // Character
 fill(255, 0, 0);
@@ -49,7 +54,7 @@ cameraX = 0;
 }
 
 // Draw the background again based on the adjusted camera position
-image(flowergardenbg, -cameraX, 0);
+image(map02, -cameraX, 0);
 
 // Draw the character at its position
 fill(255, 0, 0);
