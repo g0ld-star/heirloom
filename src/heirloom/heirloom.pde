@@ -1,8 +1,9 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map01, map02;
-Evilpt1 e1;
+ArrayList<Particle> particles = new ArrayList<Particle>();
+Evilpt e1;
 player ply1;
-infoPanel panel;
+InfoPanel panel;
 
 boolean play;
 
@@ -20,10 +21,13 @@ void setup() {
   image(map01, 0, 0);
   map01.resize(900, 600);
   image(map01, 0, 0);
-  e1 = new Evilpt1();
+  e1 = new Evilpt('p');
   ply1 = new player(width/2, 517);
   play = false;
+  panel=new InfoPanel(0, 100, 3);
 }
+
+
 
 void draw() {
   if (!play) {
@@ -52,13 +56,12 @@ void draw() {
       mapOffsetX -= mapWidth;  // Wrap around to the left
     }
   }
-    // Display objects
-    ply1.display();
-    ply1.move();
-    e1.display();
-    e1.move();
-    //panel.display();
-  
+  // Display objects
+  ply1.display();
+  ply1.move();
+  e1.display();
+  e1.move();
+  panel.display();
 }
 void keyPressed() {
   if (key == ' ') {
