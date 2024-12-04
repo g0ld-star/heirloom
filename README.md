@@ -20,3 +20,6 @@ also made this
 
 uml
 ![Game](https://github.com/user-attachments/assets/167ba1c8-ab10-4a78-940c-e4ce01c687a7)
+
+OPENING SEQUENCE STORY: 
+You are the main character, and you have magical abilities, but only if you are in possession of your family heirloom that has been passed down through generations. These magical abilities have made an evil being extremely jealous for as long as it has been alive, so one night, when you decide to go away from your home to visit family, you feel something missing... You think "it couldn't be anything important, right?" But without knowing, that family heirloom you had that allowed you to use magic abilities was stolen from your home. "How could I let this happen? Why didn't I just take it with me!" You think to yourself, and at that moment, you find out who could have stolen the heirloom. The long lost enemy of the family, who wanted that power so desperately had now taken control of it! Now, you must go on a quest to his lair to find your heirloom, fight and find friends, get through time magic, and maybe get your own magic abilities without needing the heirloom.
