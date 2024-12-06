@@ -7,11 +7,12 @@ InfoPanel panel;
 
 boolean play;
 
+int welcomeCounter;
 int mapWidth = 800;
 int mapHeight = 600;
 float mapOffsetX = 0;   // Horizontal offset for the map
 int speed = 5;
-Timer t1;
+Timer t1, wTime;
 
 
 void setup() {
@@ -28,8 +29,11 @@ void setup() {
   play = false;
   panel=new InfoPanel(0, 100, 3);
   //1000 = 1 second
-  t1=new Timer(2000);
+  t1=new Timer(500);
   t1.start();
+  wTime = new Timer(5000);
+  wTime.start();
+  welcomeCounter = 0;
 }
 
 
@@ -42,8 +46,6 @@ void draw() {
     if (t1.isFinished()) {
       evilpas.add(new Evilpa('p'));
       t1.start();
-      
-   
     }
 
 
@@ -76,10 +78,6 @@ void draw() {
     Evilpa e = evilpas.get(i);
     e.display();
     e.move();
-    if (e.reachedLeft()){
-      evilpas.remove(e);
-    }
-    
   }
   //e1.display();
   //e1.move();
@@ -94,9 +92,49 @@ void keyPressed() {
 
 void startScreen() {
   background(0);
+  if (wTime.isFinished()) {
+    wTime.start();
+    welcomeCounter++;
+  }
+  switch(welcomeCounter) {
+  case 0:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    //textFont();
+    text("You are the main character, and you have magical abilities, \n but only if you are in possession of your family heirloom \n that has been passed down through generations.", width / 2, 200);
+    // wTime.totalTime = 2000;
+    break;
+  case 1:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("These magical abilities have made an evil being extremely \n jealous for as long as it has been alive, so one night, when \n you decide to go away from your home to visit family, you \n feel something missing...", width / 2, 200);
+    break;
+  case 2:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("You think 'it couldn't be anything important, right?' But \n without knowing, that family heirloom you had that allowed \n you to use magic abilities was stolen from your home.", width / 2, 200);
+    break;
+  case 3:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("'How could I let this happen? Why didn't I just take it with me!' \n You think to yourself, and at that moment, you find \n out who could have stolen the heirloom.", width / 2, 200);
+    break;
+  case 4:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("The long lost enemy of the family, who wanted that power so \n desperately had now taken control of it! Now, you must go on \n a quest to his lair to find your heirloom, fight and find friends, \n get through time magic, and maybe get your own magic \n abilities without needing the heirloom.", width / 2, 200);
+    break;
+  default:
+    break;
+  }
   fill(255);
   textSize(60);
-  text("Press 'SpaceKey' to start", width / 8.5, height / 2);
+  text("Press 'SpaceKey' to start", width / 2, 400);
   if (keyPressed) {
     play = true;
   }
