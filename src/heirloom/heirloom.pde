@@ -102,28 +102,42 @@ void startScreen() {
     textSize(30);
     textAlign(CENTER);
     //textFont();
-    text("You are the main character, and you have magical abilities, \n but only if you are in possession of your family heirloom \n that has been passed down through generations.", width / 2, 200);
-    // wTime.totalTime = 2000;
+    text("You are the main character, and you have magical abilities.", width / 2, 200);
+    //wTime.totalTime = 2000;
     break;
-  case 1:
+    case 1:
     fill(255);
     textSize(30);
     textAlign(CENTER);
-    text("These magical abilities have made an evil being extremely \n jealous for as long as it has been alive, so one night, when \n you decide to go away from your home to visit family, you \n feel something missing...", width / 2, 200);
+    //textFont();
+    text("But there's a catch, it's only if you are in possession of your family heirloom that has been passed down through generations.", width / 2, 200);
+    // wTime.totalTime = 2000;
     break;
   case 2:
     fill(255);
     textSize(30);
     textAlign(CENTER);
+    text("These magical abilities have made an evil being extremely \n jealous for as long as it has been alive.", width / 2, 200);
+    break;
+    case 3:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("So one night, when \n you decide to go away from your home to visit family, you \n feel something missing...", width / 2, 200);
+    break;
+  case 4:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
     text("You think 'it couldn't be anything important, right?' But \n without knowing, that family heirloom you had that allowed \n you to use magic abilities was stolen from your home.", width / 2, 200);
     break;
-  case 3:
+  case 5:
     fill(255);
     textSize(30);
     textAlign(CENTER);
     text("'How could I let this happen? Why didn't I just take it with me!' \n You think to yourself, and at that moment, you find \n out who could have stolen the heirloom.", width / 2, 200);
     break;
-  case 4:
+  case 6:
     fill(255);
     textSize(30);
     textAlign(CENTER);
