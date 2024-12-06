@@ -7,12 +7,11 @@ InfoPanel panel;
 
 boolean play;
 
-int welcomeCounter;
 int mapWidth = 800;
 int mapHeight = 600;
 float mapOffsetX = 0;   // Horizontal offset for the map
 int speed = 5;
-Timer t1, wTime;
+Timer t1;
 
 
 void setup() {
@@ -29,11 +28,8 @@ void setup() {
   play = false;
   panel=new InfoPanel(0, 100, 3);
   //1000 = 1 second
-  t1=new Timer(500);
+  t1=new Timer(2000);
   t1.start();
-wTime = new Timer(5000);
-wTime.start();
-welcomeCounter = 0;
 }
 
 
@@ -46,6 +42,8 @@ void draw() {
     if (t1.isFinished()) {
       evilpas.add(new Evilpa('p'));
       t1.start();
+      
+   
     }
 
 
@@ -78,6 +76,10 @@ void draw() {
     Evilpa e = evilpas.get(i);
     e.display();
     e.move();
+    if (e.reachedLeft()){
+      evilpas.remove(e);
+    }
+    
   }
   //e1.display();
   //e1.move();
