@@ -7,11 +7,12 @@ InfoPanel panel;
 
 boolean play;
 
+int welcomeCounter;
 int mapWidth = 800;
 int mapHeight = 600;
 float mapOffsetX = 0;   // Horizontal offset for the map
 int speed = 5;
-Timer t1;
+Timer t1, wTime;
 
 
 void setup() {
@@ -30,6 +31,9 @@ void setup() {
   //1000 = 1 second
   t1=new Timer(500);
   t1.start();
+wTime = new Timer(5000);
+wTime.start();
+welcomeCounter = 0;
 }
 
 
