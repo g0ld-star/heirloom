@@ -43,7 +43,7 @@ class InfoPanel {
   void display() {
     // Draw background for info panel
     fill(50, 50, 50, 150); // Semi-transparent background
-    rect(10, 10, 200, 100);
+    rect(0, 0, 200, 100);
     
     // Set text properties
     fill(255);
@@ -53,7 +53,7 @@ class InfoPanel {
     text("Score: " + score, 20, 30);
     
     // Display the health
-    text("Health: " + health, 20, 50);
+    text("Health: " + health, 28, 50);
     
     // Display the lives
     text("Lives: " + lives, 20, 70);

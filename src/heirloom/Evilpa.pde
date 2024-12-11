@@ -1,50 +1,39 @@
 class Evilpa {
-
-  // Member Variable
-  int x, y;
+  // Member Variables
+  int x, y, w, h;
   PImage f1;
   float speed;
   boolean alive;
+  boolean  hasCollided;
   char type;
 
   // constructor
   Evilpa(char type ) {
     this.type = type;
-    x = width; //come from right side
+    x = width; // come from the right side
     y = 500;
+    w = 50;  // Width for collision
+    h = 60;  // Height for collision
     speed = 5.2;
-    f1 = loadImage ("Enemy.png");
-    // alive = false;
+    f1 = loadImage("Enemy.png");
+    
   }
 
-  //member Methods
+  // member Methods
   void display() {
-    if ( type == 'p') {
-      f1.resize(50,50);
+    if (type == 'p') {
+      f1.resize(w, h);  // Resize image based on width and height
       image(f1, x, y);
     }
   }
 
-  void move () { 
-    x-=speed;
-    
-
-    //if (mapOffsetX < 0) {
-    //  x -= speed * 2; //
-    //} else {
-    //  x -= speed; //
-    //}
-    //if (x<-30) {    //if the enemy goes off screen, it will respawn at right side
-    //  x=width;
-    //  y=500;
-    //}
-  }
-  boolean reachedLeft(){
-    if (x<-10) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  void move() {
+    x -= speed;
   
+  }
+
+
+  boolean reachedLeft() {
+    return x < -5;
+  }
 }

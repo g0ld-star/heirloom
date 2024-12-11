@@ -1,7 +1,6 @@
 // Gold B, Aayush S, Angus K | heirloom | oct. 9 2024
 PImage map01, map02;
 ArrayList<Evilpa> evilpas = new ArrayList<Evilpa>();
-//Evilpt e1;
 player ply1;
 InfoPanel panel;
 
@@ -18,18 +17,20 @@ Timer t1, wTime;
 void setup() {
   size(800, 600);
   noStroke();
-  //panel = new infoPanel(0, 100, 3);
+  panel=new InfoPanel(0, 100, 3);
   map01 = loadImage("cyberpunk background.png");
   map02 = loadImage("flowergardenbg.png");
   image(map01, 0, 0);
   map01.resize(900, 600);
   image(map01, 0, 0);
-  //e = new Evilpa('p');
-  ply1 = new player(width/2, 517);
+  
+  ply1 = new player(width / 2, 517,  30, 35);
+
+
+
   play = false;
-  panel=new InfoPanel(0, 100, 3);
   //1000 = 1 second
-  t1=new Timer(500);
+  t1=new Timer(1000);
   t1.start();
   wTime = new Timer(5000);
   wTime.start();
@@ -48,14 +49,10 @@ void draw() {
       t1.start();
     }
 
-
-    //Update timer
-    //panel.updateTimer(1.0 / frameRate);
     // Endless scrolling
     for (int i = -1; i <= 1; i++) {
       image(map02, mapOffsetX + i * mapWidth, 0); // Only use horizontal offset
     }
-
 
     if (keyPressed) {
       if (keyCode == RIGHT || key == 'd') {
@@ -70,19 +67,22 @@ void draw() {
       mapOffsetX -= mapWidth;  // Wrap around to the left
     }
   }
-  // Display objects
+
+  // Display player and enemies
   ply1.display();
   ply1.move();
 
+  // Check for collisions between the player and all enemies
   for (int i = 0; i < evilpas.size(); i++) {
     Evilpa e = evilpas.get(i);
     e.display();
     e.move();
+    ply1.checkCollision(e);  // Check for collision with each enemy
   }
-  //e1.display();
-  //e1.move();
-  panel.display();
+
+  panel.display();  // Display the InfoPanel
 }
+
 void keyPressed() {
   if (key == ' ') {
     ply1.jump();
@@ -105,12 +105,12 @@ void startScreen() {
     text("You are the main character, and you have magical abilities.", width / 2, 200);
     //wTime.totalTime = 2000;
     break;
-    case 1:
+  case 1:
     fill(255);
     textSize(30);
     textAlign(CENTER);
     //textFont();
-    text("But there's a catch, it's only if you are in possession of your family heirloom that has been passed down through generations.", width / 2, 200);
+    text("But there's a catch, \n it's only if you are in possession of your family heirloom \n that has been passed down through generations.", width / 2, 200);
     // wTime.totalTime = 2000;
     break;
   case 2:
@@ -119,7 +119,7 @@ void startScreen() {
     textAlign(CENTER);
     text("These magical abilities have made an evil being extremely \n jealous for as long as it has been alive.", width / 2, 200);
     break;
-    case 3:
+  case 3:
     fill(255);
     textSize(30);
     textAlign(CENTER);
@@ -146,8 +146,8 @@ void startScreen() {
   default:
     break;
   }
-  fill(255);
-  textSize(60);
+  fill(190);
+  textSize(25);
   text("Press 'SpaceKey' to start", width / 2, 400);
   if (keyPressed) {
     play = true;
