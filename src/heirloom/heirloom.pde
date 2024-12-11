@@ -141,7 +141,47 @@ void startScreen() {
     fill(255);
     textSize(30);
     textAlign(CENTER);
-    text("The long lost enemy of the family, who wanted that power so \n desperately had now taken control of it! Now, you must go on \n a quest to his lair to find your heirloom, fight and find friends, \n get through time magic, and maybe get your own magic \n abilities without needing the heirloom.", width / 2, 200);
+    text("The long lost enemy of the family, who wanted that power so \n desperately had now taken control of it!", width / 2, 200);
+    break;
+  default:
+    break;
+  case 7:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("Now, you must go on a quest to his lair to find your \n heirloom.", width / 2, 200);
+    break;
+  default:
+    break;
+case 8:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("You will end up fighting many people who you may not \n want to fight.", width / 2, 200);
+    break;
+  default:
+    break;
+case 9:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("There is also a possibility of finding new friends.", width / 2, 200);
+    break;
+  default:
+    break;
+case 10:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("Your enemy also has time magic while in possession \n of your heirloom! Watch out!", width / 2, 200);
+    break;
+  default:
+    break;
+case 11:
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text("Most importantly, on this journey, you might get your \n own magic abilities without needing the heirloom.", width / 2, 200);
     break;
   default:
     break;
