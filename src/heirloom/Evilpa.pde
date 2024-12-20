@@ -1,3 +1,4 @@
+//gold B
 class Evilpa {
   // Member Variables
   int x, y, w, h;
